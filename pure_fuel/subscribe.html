@@ -1486,86 +1486,77 @@
                         </div>
                       </div>
                       <div class="col-md-4">
-                        <div class="card-custom premium">
-                          <div class="card-custom-head">
-                            <img src="assets/images/fish-2.png" alt="" />
+                        <div class="premium-card">
+                          <div class="premium-badge">
+                            <div>Premium</div>
+                            <div>Additional Cost</div>
                           </div>
-                          <div class="card-custom-body">
-                            <div class="card-custom-title">
-                              <h4 class="mb-0">Shrimp</h4>
-                            </div>
-                            <div class="card-custom-details">
-                              <span
-                                ><img src="assets/images/cal.png" alt="" />255
-                                cal</span
-                              >
-                              <span
-                                ><img src="assets/images/prot.png" alt="" />42g
-                                protein</span
-                              >
-                              <span
-                                ><img src="assets/images/carb.png" alt="" />6g
-                                carbs</span
-                              >
-                              <span
-                                ><img src="assets/images/fat.png" alt="" />8g
-                                fat</span
-                              >
-                            </div>
-                            <span class="weight">Per 150g</span>
-                            <div class="meal-option invisible">
-                              <label>
-                                <input type="checkbox" />
-                              </label>
+                          <img src="assets/images/fish-2.png" alt="" />
+                          <div class="meal-title">Shrimp</div>
+                          <div class="meal-details">
+                            <span>255 cal</span>
+                            <span>42g protein</span>
+                            <span>6g carbs</span>
+                            <span>8g fat</span>
+                          </div>
 
-                              <div class="counter d-none">
-                                <button class="decrease">−</button>
-                                <span id="count">1</span>
-                                <button class="increase">+</button>
-                              </div>
-                            </div>
+                          <div class="meal-option">
+                            <button
+                              type="button"
+                              id="selectMealBtn"
+                              class="select-btn"
+                            >
+                              اختر هذه الوجبة
+                            </button>
+                          </div>
+
+                          <div class="note" id="premiumNote">
+                            Shrimp is a premium meal and it will cost extra for
+                            selected days.
+                          </div>
+
+                          <div class="extra-cost" id="extraCost">
+                            Extra Cost: SAR 0
                           </div>
                         </div>
                       </div>
                       <div class="col-md-4">
-                        <div class="card-custom premium">
-                          <div class="card-custom-head">
-                            <img src="assets/images/fish-3.png" alt="" />
+                        <div class="premium-card">
+                          <div class="premium-badge">
+                            <div>Premium</div>
+                            <div>Additional Cost</div>
                           </div>
-                          <div class="card-custom-body">
-                            <div class="card-custom-title">
-                              <h4 class="mb-0">Salmon</h4>
-                            </div>
-                            <div class="card-custom-details">
-                              <span
-                                ><img src="assets/images/cal.png" alt="" />255
-                                cal</span
-                              >
-                              <span
-                                ><img src="assets/images/prot.png" alt="" />42g
-                                protein</span
-                              >
-                              <span
-                                ><img src="assets/images/carb.png" alt="" />6g
-                                carbs</span
-                              >
-                              <span
-                                ><img src="assets/images/fat.png" alt="" />8g
-                                fat</span
-                              >
-                            </div>
-                            <span class="weight">Per 150g</span>
-                            <div class="meal-option invisible">
-                              <label>
-                                <input type="checkbox" />
-                              </label>
 
-                              <div class="counter d-none">
-                                <button class="decrease">−</button>
-                                <span id="count">1</span>
-                                <button class="increase">+</button>
-                              </div>
-                            </div>
+                          <img
+                            src="https://www.webwiders.com/pure_fuel/assets/images/fish-3.png"
+                            alt="Salmon"
+                          />
+
+                          <div class="meal-title">Salmon</div>
+                          <div class="meal-details">
+                            <span>255 cal</span>
+                            <span>42g protein</span>
+                            <span>6g carbs</span>
+                            <span>8g fat</span>
+                          </div>
+
+                          <div class="meal-option">
+                            <button
+                              type="button"
+                              id="selectMealBtn"
+                              class="select-btn"
+                            >
+                              اختر هذه الوجبة
+                            </button>
+                          </div>
+
+                          <div class="note" id="premiumNote">
+                            Salmon is a premium meal and it will cost extra for
+                            selected days.
+                          </div>
+
+                          <div class="extra-cost" id="extraCost">
+                            Extra Cost: SAR 0
                           </div>
                         </div>
                       </div>
@@ -2146,6 +2137,16 @@
                         </div>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal Structure -->
+              <div id="calendarModal" class="modal">
+                <div class="modal-content">
+                  <span class="close" id="closeModal">&times;</span>
+                  <div class="calendar-container" id="calendarContainer">
+                    <div class="week-header" id="weekHeader"></div>
+                    <div class="calendar" id="calendar"></div>
                   </div>
                 </div>
               </div>
@@ -4068,4 +4069,126 @@
       }
     });
   });
+
+  const selectBtn = document.getElementById("selectMealBtn");
+  const checkbox = document.createElement("input"); // hidden checkbox
+  checkbox.type = "checkbox";
+  checkbox.id = "premium-meal-checkbox";
+  document.body.appendChild(checkbox); // for triggering JS
+
+  const calendarModal = document.getElementById("calendarModal");
+  const closeModal = document.getElementById("closeModal");
+  const calendarContainer = document.getElementById("calendarContainer");
+  const calendar = document.getElementById("calendar");
+  const weekHeader = document.getElementById("weekHeader");
+  const extraCost = document.getElementById("extraCost");
+  const note = document.getElementById("premiumNote");
+
+  const subscriptionDays = 26;
+  const pricePerMeal = 30;
+  let selectedDays = [];
+
+  const subscriptionStart = new Date();
+  const weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+  // زر الاختيار
+  selectBtn.addEventListener("click", () => {
+    selectBtn.classList.toggle("selected");
+    if (selectBtn.classList.contains("selected")) {
+      selectBtn.textContent = "تم الاختيار";
+      checkbox.checked = true;
+      checkbox.dispatchEvent(new Event("change"));
+    } else {
+      selectBtn.textContent = "اختر هذه الوجبة";
+      checkbox.checked = false;
+      checkbox.dispatchEvent(new Event("change"));
+    }
+  });
+
+  // Toggle checkbox
+  checkbox.addEventListener("change", () => {
+    if (checkbox.checked) {
+      calendarModal.style.display = "block";
+      note.style.display = "block";
+      extraCost.style.display = "block";
+      renderWeekHeader();
+      renderCalendar();
+    } else {
+      calendarModal.style.display = "none";
+      note.style.display = "none";
+      extraCost.style.display = "none";
+      selectedDays = [];
+      updateExtraCost();
+    }
+  });
+
+  // Close modal
+  closeModal.addEventListener("click", () => {
+    calendarModal.style.display = "none";
+  });
+
+  // Render weekday headers
+  function renderWeekHeader() {
+    weekHeader.innerHTML = "";
+    weekdays.forEach((day) => {
+      const div = document.createElement("div");
+      div.textContent = day;
+      weekHeader.appendChild(div);
+    });
+  }
+
+  // Render calendar
+  function renderCalendar() {
+    calendar.innerHTML = "";
+
+    const startDay = subscriptionStart.getDay();
+    const offset = startDay === 0 ? 6 : startDay - 1;
+
+    for (let i = 0; i < offset; i++) {
+      const emptyDiv = document.createElement("div");
+      calendar.appendChild(emptyDiv);
+    }
+
+    for (let i = 0; i < subscriptionDays; i++) {
+      const date = new Date(subscriptionStart);
+      date.setDate(subscriptionStart.getDate() + i);
+
+      const dayDiv = document.createElement("div");
+      dayDiv.classList.add("calendar-day");
+
+      const dayOfWeek = date.getDay();
+      if (dayOfWeek === 0 || dayOfWeek === 6) dayDiv.classList.add("weekend");
+
+      dayDiv.dataset.day = i + 1;
+      dayDiv.textContent = `${
+        weekdays[(dayOfWeek + 6) % 7]
+      }\n${date.toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+      })}`;
+      dayDiv.title = "Click to select this day for Salmon";
+
+      dayDiv.addEventListener("click", () => toggleDay(dayDiv, i + 1));
+      calendar.appendChild(dayDiv);
+    }
+  }
+
+  // Toggle day selection
+  function toggleDay(dayDiv, dayNumber) {
+    const index = selectedDays.indexOf(dayNumber);
+    if (index > -1) {
+      selectedDays.splice(index, 1);
+      dayDiv.classList.remove("selected");
+    } else {
+      selectedDays.push(dayNumber);
+      dayDiv.classList.add("selected");
+    }
+    updateExtraCost();
+  }
+
+  // Update extra cost
+  function updateExtraCost() {
+    const cost = selectedDays.length * pricePerMeal;
+    extraCost.textContent = `Extra Cost: SAR ${cost}`;
+  }
 </script>
