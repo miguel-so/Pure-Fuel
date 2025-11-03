@@ -1,0 +1,1020 @@
+ 
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from www.webwiders.com/pure_fuel_admin/active-subscription-report.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 03 Nov 2025 18:15:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Fuel Admin</title>
+    <link rel="icon" type="image/x-icon" href="../pure_fuel/assets/images/logo.png">
+    <!-- bootstrap  -->
+    <link rel="stylesheet" href="../../cdn.jsdelivr.net/npm/bootstrap%405.3.8/dist/css/bootstrap.min.css">
+    <!-- Owl Carousel CSS (core + theme) -->
+    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- font-awesome  -->
+    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- custom css  -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+
+<body>
+ <style>
+     footer {
+         display: none;
+     }
+
+     .dashboard-card {
+         min-height: unset;
+     }
+
+     tr:has(input:checked) td {
+         background: var(--color-accent) !important;
+     }
+
+     @media (max-width: 600px) {
+         .dashboard-card .icon {
+             top: 20px;
+             right: 15px;
+         }
+     }
+ </style>
+
+ <div class="layout">
+     <!-- Sidebar -->
+     <aside class="sidebar" id="sidebar">
+
+    <a href="#" class="btn btn-outline-white active px-3 my-3 mx-auto d-block fs-14" data-bs-toggle="modal" data-bs-target="#printLabelModal"><img src="assets/images/print-sm.png" alt="" style="
+    margin-right: 5px;
+    ">Print Delivery Labels</a>
+
+    <div class="logo">
+        <a href="dashboard.html">
+            <img src="assets/images/sidebar_logo.png" class="w-50 mx-auto d-block" alt="">
+            <p class="logo-subtext mx-auto d-block">
+                Where health meets happiness
+            </p>
+        </a>
+    </div>
+
+    <nav class="nav">
+        <div class="nav-item"><a href="dashboard.html"><img src="assets/images/home-ic.png" alt=""><span>Dashboard</span></a></div>
+        <div class="nav-item btn-div">
+            <a href="javascript:void(0);"><img src="assets/images/user-ic.png" alt=""><span>Subscribers</span> <i class="fa-solid fa-chevron-right ms-auto dropdown"></i></a>
+            <div class="submenu-main">
+                <div class="submenu box">
+                    <a href="subscribers.html"><span>Manage Subscribers</span></a>
+                    <a href="add-new-subscriber.html"><span>Add New Subscriber</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a href="active-subscription-report.html"><img src="assets/images/notepad-ic.png" alt=""><span>Reports</span></a>
+            <!-- <div class="submenu box">
+                <a href="">Active Subscribers</a>
+                <a href="https://www.webwiders.com/pure_fuel_admin/expiry-subscription.php">Expiry Subscriber</a>
+            </div> -->
+        </div>
+        <div class="nav-item"><a href="announcements.html"><img src="assets/images/sound-ic.png" alt=""><span>Announcements</span></a></div>
+        <div class="nav-item"><a href="https://purefuelsa.com/"><img src="assets/images/plane-ic.png" alt=""><span>Visit the Pure Fuel</span></a></div>
+    </nav>
+    <div class="bottom">
+        <label class="note">disable new delivery orders</label>
+        <div class="delivery-toggle mb-2">
+            <label class="mb-0">Delivery Plan</label>
+            <label class="switch">
+                <input type="checkbox" id="planToggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <p class="mb-0 mt-3 fs-10 text-center"> © 2025 Pure Fuel — Built with ❤️ <br> by AZIZ Version 1.0.0</p>
+    </div>
+</aside>
+     <!-- Main Content -->
+     <main class="main">
+         <header class="header d-none d-md-flex">
+    <div class="header-left align-items-center d-flex">
+        <div class="toggle-btn d-none d-lg-flex" id="toggleBtn">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <!-- <h4 class="mb-0 fw-bold font_mont text-black d-lg-block d-none">Meal Plan Subscribers</h4> -->
+        <button class="navbar-toggler rounded-2 d-lg-none me-2 hamburger" id="" type="button">
+            <span class="navbar-toggler-icon"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'>
+                    <path stroke='#ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22' />
+                </svg></span>
+        </button>
+        <div class="search d-none"><input type="search" placeholder="Search"></div>
+        <div class="search-container">
+            <div class="search-box m-0 ms-3" role="search">
+                <input aria-label="Search contacts" type="text" id="searchInput" placeholder="Search by name or phone..." autocomplete="off">
+                <i class="bi bi-search"></i>
+            </div>
+            <div id="resultContainer" tabindex="0" aria-live="polite"></div>
+        </div>
+    </div>
+    <div class="header-right align-items-center d-flex gap-3">
+        <div class="health text-end">
+            <p class="mb-0 fs-14">Where health meets happiness</p>
+            <!-- <p class="mb-0 fs-14">Powered by AZIZ ❤️</p> -->
+        </div>
+        <div class="profile">
+            <span>Hello<span class="fw-bold">, Adnan</span></span>
+            <!-- <img src="https://i.pravatar.cc/40?img=32" class="profile-avatar" alt="Profile"> -->
+            <img src="assets/images/profile.png" class="profile-avatar" alt="Profile">
+            <a class="nav-link btn border btn-outline text-black" href="#">العربية</a>
+        </div>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#logoutModal" class="log-out">
+            <span><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+        </a>
+
+    </div>
+</header>
+
+
+<!-- mobile header  -->
+
+<header class="header d-block d-md-none">
+    <div class="text-center">
+        <p class="mb-0 fs-14">Where health meets happiness</p>
+    </div>
+    <div class="d-flex justify-content-between">
+        <div class="header-left align-items-center d-flex gap-2 w-auto">
+            <button class="navbar-toggler rounded-2 hamburger" id="" type="button">
+                <span class="navbar-toggler-icon"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'>
+                        <path stroke='#ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22' />
+                    </svg></span>
+            </button>
+            <div class="search"><i class="fa fa-search"></i></div>
+        </div>
+        <div class="header-right align-items-center  d-flex gap-3">
+
+            <div class="profile">
+                <span>Hello<span class="fw-bold">, Adnan</span></span>
+                <img src="assets/images/profile.png" class="profile-avatar" alt="Profile">
+                <a class="nav-link btn border btn-outline text-black" href="#">العربية</a>
+            </div>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#logoutModal" class="log-out">
+                <span><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+            </a>
+
+        </div>
+    </div>
+</header>
+         <div class="dashboard-content gap-0 ">
+             <h4 class="d-block d-md-none fs-24 mb-0 fw-bold mb-3 fs-md-24">Reports</h4>
+             <h2 class="mb-2 fs-md-20">Active Subscribers Report</h2>
+             <p class="">Total active users, plan types, start dates, and renewal dates</p>
+             <!-- Cards Row -->
+             <div class="row">
+                 <!-- Total Active Subscribers -->
+                 <div class="col-12 col-sm-6 col-md-4 mb-3 mb-lg-0">
+                     <div class="dashboard-card position-relative align-items-center">
+                         <h6 class="mb-2 fs-14">Active Subscribers <span class="icon"><i class="fas fa-users"></i></span></h6>
+                         <h4 class="fw-bold mb-0 text-black">300</h4>
+                     </div>
+                 </div>
+                 <!-- New Subscriptions -->
+                 <div class="col-12 col-sm-6 col-md-4 mb-3 mb-lg-0">
+                     <div class="dashboard-card position-relative align-items-center">
+                         <h6 class="mb-2 fs-14">Near-to-Expire <span class="icon"><i class="fas fa-chart-line"></i></span></h6>
+                         <h4 class="fw-bold mb-0 text-black">200</h4>
+                     </div>
+                 </div>
+                 <!-- Meals Delivered Today -->
+                 <div class="col-12 col-sm-6 col-md-4 mb-3 mb-lg-0">
+                     <div class="dashboard-card position-relative align-items-center">
+                         <h6 class="mb-2 fs-14">Expired <span class="icon"><i class="fas fa-calendar"></i></span></h6>
+                         <h4 class="fw-bold mb-0 text-black">2,894</h4>
+                     </div>
+                 </div>
+             </div>
+             <!-- Main Analytics Section -->
+             <div class="dashboard-main mb-5">
+                 <div class="card mb-4 d-flex gap-0 gap-md-3 flex-nowrap flex-column flex-md-row">
+                     <div class="form-box">
+                         <label for="" class="fs-16 fw-medium">Plan Type</label>
+                         <select name="" id="">
+                             <option value="" selected>Delivery</option>
+                             <option value="">Pickup</option>
+                         </select>
+                     </div>
+                     <div class="form-box">
+                         <label for="" class="fs-16 fw-medium">Status</label>
+                         <select name="" id="">
+                             <option value="" selected>Active</option>
+                             <option value="">Near-to-Expire</option>
+                             <option value="">Expired</option>
+                         </select>
+                     </div>
+                     <div class="form-box">
+                         <label for="" class="fs-16 fw-medium">Start Date</label>
+                         <input type="date" name="" id="">
+                     </div>
+                     <div class="form-box">
+                         <label for="" class="fs-16 fw-medium">End Date</label>
+                         <input type="date" name="" id="">
+                     </div>
+                 </div>
+                 <div class="card">
+                     <div class="d-flex justify-content-between align-items-center mb-4">
+                         <h4 class="mb-0 text-black">Active Subscribers</h4>
+                         <div class="dropdown">
+                             <button class="btn btn-outline me-2 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                                 <i class="fa fa-download me-1"></i> Export
+                             </button>
+                             <ul class="dropdown-menu">
+                                 <li><a class="dropdown-item" href="#">Export as CSV</a></li>
+                                 <li><a class="dropdown-item" href="#">Export as PDF</a></li>
+                                 <li><a class="dropdown-item" href="#">Export as Mail</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                     <!-- Insert search input(s) here -->
+                     <div class="mb-3 d-flex gap-3">
+                         <input type="text" class="form-control" placeholder="Search Full Name or Phone #">
+                         <!-- Or add separate inputs -->
+                         <!-- <input type="text" class="form-control" placeholder="Search Full Name"> -->
+                         <!-- <input type="text" class="form-control" placeholder="Search Phone #"> -->
+                     </div>
+                     <div class="table-responsive">
+
+                         <table class="table align-middle">
+                             <thead class="table-light">
+                                 <tr>
+                                     <th>Select</th>
+                                     <th>Full Name</th>
+                                     <th>Phone #</th>
+                                     <th>Subscription Plan</th>
+                                     <th>Plan Type</th>
+                                     <th>Payment Info</th>
+                                     <th>Start Date</th>
+                                     <th>End Date</th>
+                                     <th>Remaining Days</th>
+                                     <th>Status</th>
+                                     <th>Timestamp</th>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                 <tr>
+                                     <td>
+                                         <div class="form-box mb-0">
+                                             <input type="checkbox" name="" id="">
+                                         </div>
+                                     </td>
+                                     <td>Mohammed Salem</td>
+                                     <td>+966 55 123 4567</td>
+                                     <td>3 meals/day</td>
+                                     <td>Pickup</td>
+                                     <td><i class="fa-solid fa-credit-card fs-4"></i></td>
+                                     <td>01/05/2025</td>
+                                     <td>01/06/2025</td>
+                                     <td>3 days</td>
+                                     <td><span class="status-active badge">Active</span></td>
+                                     <td>2025-05-28 09:20</td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="form-box mb-0">
+                                             <input type="checkbox" name="" id="">
+                                         </div>
+                                     </td>
+                                     <td>Sara Alqahtani</td>
+                                     <td>+966 50 987 6543</td>
+                                     <td>2 meals/day</td>
+                                     <td>Delivery</td>
+                                     <td><i class="fa-brands fa-apple-pay fs-2"></i></td>
+                                     <td>15/04/2025</td>
+                                     <td>15/05/2025</td>
+                                     <td>3 days</td>
+                                     <td><span class="status-active badge">Active</span></td>
+                                     <td>2025-05-28 09:20</td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="form-box mb-0">
+                                             <input type="checkbox" name="" id="">
+                                         </div>
+                                     </td>
+                                     <td>Khalid Alsaud</td>
+                                     <td>+966 54 555 7980</td>
+                                     <td>1 meal/day</td>
+                                     <td>Pickup</td>
+                                     <td><i class="fa-solid fa-credit-card fs-4"></i></td>
+                                     <td>10/03/2025</td>
+                                     <td>10/04/2025</td>
+                                     <td>3 days</td>
+                                     <td><span class="status-active badge">Active</span></td>
+                                     <td>2025-05-28 09:20</td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="form-box mb-0">
+                                             <input type="checkbox" name="" id="">
+                                         </div>
+                                     </td>
+                                     <td>Noura Alshammari</td>
+                                     <td>+966 56 222 3344</td>
+                                     <td>3 meals/day</td>
+                                     <td>Delivery</td>
+                                     <td><i class="fa-solid fa-credit-card fs-4"></i></td>
+                                     <td>20/04/2025</td>
+                                     <td>20/05/2025</td>
+                                     <td>3 days</td>
+                                     <td><span class="status-active badge">Active</span></td>
+                                     <td>2025-05-28 09:20</td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="form-box mb-0">
+                                             <input type="checkbox" name="" id="">
+                                         </div>
+                                     </td>
+                                     <td>Fahad Alotaibi</td>
+                                     <td>+966 59 777 8999</td>
+                                     <td>2 meals/day</td>
+                                     <td>Delivery</td>
+                                     <td><i class="fa-brands fa-apple-pay fs-2"></i></td>
+                                     <td>05/05/2025</td>
+                                     <td>05/06/2025</td>
+                                     <td>3 days</td>
+                                     <td><span class="status-active badge">Active</span></td>
+                                     <td>2025-05-28 09:20</td>
+                                 </tr>
+                             </tbody>
+                         </table>
+                     </div>
+                     <div class="d-flex justify-content-between align-items-center mt-2">
+                         <span>Rows per page: 5</span>
+                         <nav>
+                             <ul class="pagination pagination-sm mb-0">
+                                 <li class="page-item text-primary border-0 bg-transparent"><a class="page-link text-black border-0 bg-transparent me-3">1-5 of 5</a></li>
+                                 <li class="page-item disabled px-2"><a class="page-link border-0 bg-transparent"><i class="fa-solid fa-chevron-left"></i></a></li>
+                                 <li class="page-item disabled px-2"><a class="page-link border-0 bg-transparent"><i class="fa-solid fa-chevron-right"></i></a></li>
+                             </ul>
+                         </nav>
+                     </div>
+                 </div>
+             </div>
+             <!-- END dashboard-content -->
+         </div>
+     </main>
+
+
+     <footer>
+    <div class="container text-center">
+        © 2025 Pure Fuel - Powered by AZIZ ❤️
+    </div>
+</footer>
+
+<div id="overlay"></div>
+
+<!-- Modal -->
+<!-- Print Label Modal -->
+<div class="modal fade" id="printLabelModal" tabindex="-1" aria-labelledby="printLabelModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content shadow">
+            <div class="modal-header">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="circle-icon">
+                        <i class="fa-solid fa-print"></i>
+                    </div>
+                    <h5 class="modal-title mb-0" id="printLabelModalLabel">Select Delivery Subscribers</h5>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <p class="text-muted mb-0">Select subscribers to print labels</p>
+                    <button type="button" class="btn btn-sm btn-outline-primary" id="selectAllBtn">
+                        <i class="fa-solid fa-check-double"></i> Select All
+                    </button>
+                </div>
+                
+                <!-- Subscriber List -->
+                <div class="subscriber-list" id="subscriberList">
+                    <!-- Subscribers will be loaded here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100 d-flex justify-content-between align-items-center">
+                    <span class="text-muted" id="selectedCount">0 selected</span>
+                    <div class="d-flex gap-2">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="printSelectedBtn">
+                            <i class="fa-solid fa-print"></i> Print Labels
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+    const printLabelModal = document.getElementById('printLabelModal');
+    const subscriberList = document.getElementById('subscriberList');
+    const selectAllBtn = document.getElementById('selectAllBtn');
+    const printSelectedBtn = document.getElementById('printSelectedBtn');
+    const selectedCountSpan = document.getElementById('selectedCount');
+    
+    // Dummy data - delivery subscribers
+    let subscribers = [
+        {
+            id: 1,
+            name: 'Ahmed Al-Mansoori',
+            phone: '+971 50 123 4567',
+            plan_name: 'Premium Delivery Plan',
+            selected: true
+        },
+        {
+            id: 2,
+            name: 'Fatima Hassan',
+            phone: '+971 55 234 5678',
+            plan_name: 'Standard Delivery Plan',
+            selected: true
+        },
+        {
+            id: 3,
+            name: 'Mohammed Ali',
+            phone: '+971 52 345 6789',
+            plan_name: 'Basic Delivery Plan',
+            selected: true
+        },
+        {
+            id: 4,
+            name: 'Sara Abdullah',
+            phone: '+971 56 456 7890',
+            plan_name: 'Premium Delivery Plan',
+            selected: true
+        },
+        {
+            id: 5,
+            name: 'Omar Khalid',
+            phone: '+971 50 567 8901',
+            plan_name: 'Standard Delivery Plan',
+            selected: true
+        },
+        {
+            id: 6,
+            name: 'Layla Ibrahim',
+            phone: '+971 55 678 9012',
+            plan_name: 'Premium Delivery Plan',
+            selected: true
+        },
+        {
+            id: 7,
+            name: 'Khalid Rahman',
+            phone: '+971 52 789 0123',
+            plan_name: 'Basic Delivery Plan',
+            selected: true
+        },
+        {
+            id: 8,
+            name: 'Aisha Mohammed',
+            phone: '+971 56 890 1234',
+            plan_name: 'Standard Delivery Plan',
+            selected: true
+        }
+    ];
+    
+    let allSelected = true;
+
+    // Load delivery subscribers when modal opens
+    printLabelModal.addEventListener('show.bs.modal', function() {
+        renderSubscribers();
+    });
+
+    // Render subscribers list
+    function renderSubscribers() {
+        const html = subscribers.map((sub, index) => `
+            <div class="subscriber-item" data-index="${index}">
+                <input type="checkbox" 
+                       class="subscriber-checkbox" 
+                       id="sub-${sub.id}" 
+                       value="${sub.id}"
+                       ${sub.selected ? 'checked' : ''}>
+                <label for="sub-${sub.id}" class="subscriber-info">
+                    <div class="subscriber-name">${sub.name}</div>
+                    <div class="subscriber-details">
+                        ${sub.phone} • ${sub.plan_name}
+                    </div>
+                </label>
+                <span class="subscriber-status">Delivery</span>
+            </div>
+        `).join('');
+
+        subscriberList.innerHTML = html;
+        updateSelectedCount();
+        attachCheckboxListeners();
+    }
+
+    // Attach checkbox listeners
+    function attachCheckboxListeners() {
+        const checkboxes = subscriberList.querySelectorAll('.subscriber-checkbox');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const index = this.closest('.subscriber-item').dataset.index;
+                subscribers[index].selected = this.checked;
+                updateSelectedCount();
+                updateSelectAllButton();
+            });
+        });
+
+        // Make entire item clickable
+        const items = subscriberList.querySelectorAll('.subscriber-item');
+        items.forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (e.target.type !== 'checkbox' && e.target.tagName !== 'LABEL') {
+                    const checkbox = this.querySelector('.subscriber-checkbox');
+                    checkbox.checked = !checkbox.checked;
+                    checkbox.dispatchEvent(new Event('change'));
+                }
+            });
+        });
+    }
+
+    // Select All / Deselect All
+    selectAllBtn.addEventListener('click', function() {
+        allSelected = !allSelected;
+        
+        subscribers.forEach(sub => {
+            sub.selected = allSelected;
+        });
+
+        const checkboxes = subscriberList.querySelectorAll('.subscriber-checkbox');
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = allSelected;
+        });
+
+        updateSelectAllButton();
+        updateSelectedCount();
+    });
+
+    // Update Select All button text
+    function updateSelectAllButton() {
+        const allChecked = subscribers.every(sub => sub.selected);
+        allSelected = allChecked;
+        
+        if (allChecked) {
+            selectAllBtn.innerHTML = '<i class="fa-solid fa-xmark"></i> Deselect All';
+            selectAllBtn.classList.remove('btn-outline-primary');
+            selectAllBtn.classList.add('btn-outline-secondary');
+        } else {
+            selectAllBtn.innerHTML = '<i class="fa-solid fa-check-double"></i> Select All';
+            selectAllBtn.classList.remove('btn-outline-secondary');
+            selectAllBtn.classList.add('btn-outline-primary');
+        }
+    }
+
+    // Update selected count
+    function updateSelectedCount() {
+        const count = subscribers.filter(sub => sub.selected).length;
+        selectedCountSpan.textContent = `${count} selected`;
+        
+        // Enable/disable print button
+        printSelectedBtn.disabled = count === 0;
+    }
+
+    // Print selected labels
+    printSelectedBtn.addEventListener('click', function() {
+        const selectedSubs = subscribers.filter(sub => sub.selected);
+
+        if (selectedSubs.length === 0) {
+            alert('Please select at least one subscriber.');
+            return;
+        }
+
+        // Log selected subscribers (for demo)
+        console.log('Printing labels for:', selectedSubs);
+        
+        // Show alert with selected names
+        const names = selectedSubs.map(sub => sub.name).join('\n');
+        alert(`Printing labels for:\n\n${names}`);
+
+        // Close modal
+        const modalInstance = bootstrap.Modal.getInstance(printLabelModal);
+        modalInstance.hide();
+    });
+});
+
+</script>
+
+<!-- Modal -->
+<div class="modal fade" id="printModal" tabindex="-1" aria-labelledby="printModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow">
+            <div class="modal-header">
+                <div class="circle-icon">
+                    <i class="fa fa-print"></i>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-title">Printing Delivery Labels...</div>
+                <div>Please wait while we prepare your labels</div>
+                <div class="progress-label">
+                    <span>Printing 5 labels...</span>
+                    <span>0%</span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 0%;"></div>
+                </div>
+                <span class="status-count">84/200</span>
+                <div style="margin-top: 16px; margin-bottom: 16px;">
+                    <div>This may take a few moments.<br>
+                        Please don't close this window.</div>
+                </div>
+            </div>
+            <div class="modal-footer flex-column">
+                <button type="button" class="btn btn-primary">Start Printing</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- bootstrap  -->
+<script src="../../cdn.jsdelivr.net/npm/bootstrap%405.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- 1) jQuery first (full version, not slim) -->
+<script src="../../cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- 2) Owl Carousel JS (depends on jQuery) -->
+<script src="../../cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<!-- Then your custom script -->
+<script src="assets/js/script.js"></script>
+
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const sidebar = document.getElementById('sidebar');
+        const toggleBtn = document.getElementById('toggleBtn');
+        const navItems = document.querySelectorAll('.nav-item.btn-div');
+        const planToggle = document.getElementById('planToggle');
+
+
+
+        // Toggle sidebar collapse
+    toggleBtn.addEventListener('click', function() {
+        sidebar.classList.toggle('collapsed');
+        
+        // Toggle chevron direction
+        const chevronIcon = toggleBtn.querySelector('i');
+        if (chevronIcon) {
+            if (sidebar.classList.contains('collapsed')) {
+                // Change to right chevron when collapsed
+                chevronIcon.classList.remove('fa-chevron-left');
+                chevronIcon.classList.add('fa-chevron-right');
+            } else {
+                // Change to left chevron when expanded
+                chevronIcon.classList.remove('fa-chevron-right');
+                chevronIcon.classList.add('fa-chevron-left');
+            }
+        }
+    });
+
+        // Toggle submenus
+        navItems.forEach(item => {
+            const link = item.querySelector('a');
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                item.classList.toggle('active');
+            });
+        });
+
+        // Handle delivery plan toggle
+        planToggle.addEventListener('change', function() {
+            if (this.checked) {
+                console.log('Delivery plan enabled');
+            } else {
+                console.log('Delivery plan disabled');
+            }
+        });
+
+        // Get the current URL path (e.g. '/pure_fuel_admin/active-subscription-report.php')
+        const currentPath = window.location.pathname;
+
+        // Select all sidebar links
+        document.querySelectorAll('#sidebar a').forEach(link => {
+            // Create a URL object to safely get pathname from href (even if it’s absolute)
+            const linkPath = new URL(link.href%2c%20window.location.html).pathname;
+
+            // Compare paths (ignores domain, focuses only on path part)
+            if (linkPath === currentPath) {
+                // Add 'active' class to the link
+                link.classList.add('active');
+
+                // Also add 'active' class to parent .nav-item if exists
+                const parentItem = link.closest('.nav-item');
+                if (parentItem) {
+                    parentItem.classList.add('active');
+                }
+
+                // Optional debug log
+                console.log('Matched link:', link.href);
+            }
+        });
+
+
+
+
+        // Mobile responsiveness
+        function handleResize() {
+            const sidebar = document.querySelector('#sidebar');
+
+            if (window.innerWidth <= 992) {
+
+                // Remove existing classes
+                sidebar.classList.remove('collapsed', 'mobile-open');
+
+
+                // Open sidebar on hamburger click
+                $(".hamburger").on("click", function() {
+                    $("#sidebar").addClass("mobile-open");
+                    $("#overlay").addClass("active");
+                });
+
+
+
+                // Close sidebar when clicking outside (overlay)
+                $("#overlay").on("click", function() {
+                    $("#sidebar").removeClass("mobile-open");
+                    $("#overlay").removeClass("active");
+                    closeAllSubmenus(); // Close all submenus when sidebar closes
+                });
+
+            } else {
+                sidebar.classList.remove('mobile-open');
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+        handleResize(); // Run on load
+
+
+        sidebar.addEventListener('mouseleave', function() {
+            if (sidebar.classList.contains('collapsed')) {
+                closeAllSubmenus();
+            }
+        });
+
+
+
+
+
+
+    });
+</script>
+
+
+
+<!-- Bootstrap Datepicker JS -->
+<script src="../../cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        let today = new Date();
+        $('#delivery-date').datepicker({
+            "autoclose": true,
+            "format": "dd/mm/yyyy",
+            todayHighlight: true,
+            startDate: today,
+        });
+    });
+
+
+    $(document).ready(function() {
+        $('.form-box i').on('click', function() {
+            var $icon = $(this);
+            var $input = $icon.siblings('input[type="password"], input[type="text"]');
+
+            if ($input.attr('type') === 'password') {
+                $input.attr('type', 'text'); // show password
+                $icon.removeClass('fa-eye-slash').addClass('fa-eye');
+            } else {
+                $input.attr('type', 'password'); // hide password
+                $icon.removeClass('fa-eye').addClass('fa-eye-slash');
+            }
+        });
+    });
+</script>
+
+<script>
+    const toggle = document.getElementById("planToggle");
+    const statusText = document.getElementById("status");
+
+    toggle.addEventListener("change", () => {
+        if (toggle.checked) {
+            statusText.textContent = "ON";
+            statusText.classList.add("status-on");
+            statusText.classList.remove("status-off");
+        } else {
+            statusText.textContent = "OFF";
+            statusText.classList.add("status-off");
+            statusText.classList.remove("status-on");
+        }
+    });
+</script>
+
+<!-- Bootstrap Icons -->
+<link href="../../cdn.jsdelivr.net/npm/bootstrap-icons%401.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<script>
+    const data = [{
+            name: "Ahmed Al Ahmed",
+            role: "Delivery",
+            phone: "0550009999",
+            status: "Active"
+        },
+        {
+            name: "Fatima Noor",
+            role: "Pickup",
+            phone: "0541234567",
+            status: "Active"
+        },
+        {
+            name: "Ali Khan",
+            role: "Delivery",
+            phone: "0527896541",
+            status: "Inactive"
+        },
+        {
+            name: "Maryam Saeed",
+            role: "Pickup",
+            phone: "0561112223",
+            status: "Active"
+        },
+        {
+            name: "Omar Al Habibi",
+            role: "Delivery",
+            phone: "0503338888",
+            status: "Active"
+        }
+    ];
+
+    const container = document.getElementById("resultContainer");
+    const searchInput = document.getElementById("searchInput");
+
+    function renderList(list) {
+        container.innerHTML = "";
+        if (list.length === 0) {
+            container.innerHTML = `<p class="text-muted text-center mt-3">No results found</p>`;
+            return;
+        }
+        list.forEach(user => {
+            const initials = user.name.split(" ").map(n => n[0]).join("").substring(0, 2).toUpperCase();
+            const badgeClass = user.status === "Active" ? "bg-success-subtle text-success" : "bg-secondary-subtle text-secondary";
+            const card = document.createElement("div");
+            card.className = "card-custom";
+            card.innerHTML = `<a href="#">
+          <div class="d-flex align-items-center">
+            <div class="avatar">${initials}</div>
+            <div class="user-info">
+              <h6>${user.name}</h6>
+              <small>${user.role}</small>
+            </div>
+          </div>
+          <div class="text-end">
+            <div class="phone">${user.phone}</div>
+            <span class="badge badge-status ${badgeClass}">${user.status}</span>
+          </div>
+          </a>
+        `;
+            container.appendChild(card);
+        });
+    }
+
+    // Only show results if the search field has input
+    searchInput.addEventListener("input", function() {
+        const query = this.value.toLowerCase().trim();
+        if (query.length === 0) {
+            container.innerHTML = "";
+            return;
+        }
+        const filtered = data.filter(user =>
+            user.name.toLowerCase().includes(query) || user.phone.includes(query)
+        );
+        renderList(filtered);
+    });
+</script>
+
+<script>
+    // jQuery example
+    $('table').on('click', 'tr[data-href]', function(e) {
+        // prevent clicking if the actual target is a link or button
+        if ($(e.target).closest('a, button').length) return;
+        window.location = $(this).data('href');
+    });
+</script>
+
+
+
+
+
+<script>
+    (function() {
+        var sidebar = document.getElementById('sidebar');
+        var btn = document.getElementById('sidebarCollapseBtn');
+        var STORAGE_KEY = 'sidebar-collapsed';
+        var desktopMatch = window.matchMedia('(min-width: 992px)');
+
+        function applyStoredState() {
+            try {
+                var stored = localStorage.getItem(STORAGE_KEY);
+                if (desktopMatch.matches && stored === '1') {
+                    sidebar.classList.add('collapsed');
+                } else {
+                    sidebar.classList.remove('collapsed');
+                }
+            } catch (e) {
+                sidebar.classList.remove('collapsed');
+            }
+        }
+
+        // Toggle handler for collapse button
+        if (btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                var isCollapsed = sidebar.classList.toggle('collapsed');
+                try {
+                    localStorage.setItem(STORAGE_KEY, isCollapsed ? '1' : '0');
+                } catch (e) {
+                    // ignore
+                }
+            });
+        }
+
+        // Submenu click toggles on desktop (useful for accessibility / click devices)
+        function setupSubmenuToggles() {
+            var btnDivs = sidebar.querySelectorAll('.btn-div');
+            btnDivs.forEach(function(div) {
+                var anchor = div.querySelector(':scope > a');
+                if (!anchor) return;
+                // remove any previous click handler marker
+                if (anchor._submenuBound) return;
+                anchor._submenuBound = true;
+
+                anchor.addEventListener('click', function(e) {
+                    // Only toggle submenu behavior on desktop; let mobile behave normally (stacked links)
+                    if (!desktopMatch.matches) return;
+                    e.preventDefault();
+                    // toggle open class on this div, close others
+                    var isOpen = div.classList.toggle('open');
+                    btnDivs.forEach(function(other) {
+                        if (other !== div) other.classList.remove('open');
+                    });
+                });
+            });
+        }
+
+        // Remove .open when leaving desktop view
+        function clearSubmenuOpenOnSmall() {
+            if (!desktopMatch.matches) {
+                var openItems = sidebar.querySelectorAll('.btn-div.open');
+                openItems.forEach(function(it) {
+                    it.classList.remove('open');
+                });
+            }
+        }
+
+        // Initialize
+        applyStoredState();
+        setupSubmenuToggles();
+        clearSubmenuOpenOnSmall();
+
+        // React to screen-size changes
+        if (desktopMatch.addEventListener) {
+            desktopMatch.addEventListener('change', function() {
+                applyStoredState();
+                clearSubmenuOpenOnSmall();
+            });
+        } else {
+            window.addEventListener('resize', function() {
+                applyStoredState();
+                clearSubmenuOpenOnSmall();
+            });
+        }
+    })();
+</script>
+
+
+</body>
+
+
+<!-- Mirrored from www.webwiders.com/pure_fuel_admin/active-subscription-report.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 03 Nov 2025 18:15:03 GMT -->
+</html>
