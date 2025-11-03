@@ -1503,19 +1503,19 @@
                           <div class="meal-option">
                             <button
                               type="button"
-                              id="selectMealBtn"
+                              id="selectShrimpBtn"
                               class="select-btn"
                             >
                               اختر هذه الوجبة
                             </button>
                           </div>
 
-                          <div class="note" id="premiumNote">
+                          <div class="note" id="shrimpPremiumNote">
                             Shrimp is a premium meal and it will cost extra for
                             selected days.
                           </div>
 
-                          <div class="extra-cost" id="extraCost">
+                          <div class="extra-cost" id="shrimpExtraCost">
                             Extra Cost: SAR 0
                           </div>
                         </div>
@@ -1543,19 +1543,19 @@
                           <div class="meal-option">
                             <button
                               type="button"
-                              id="selectMealBtn"
+                              id="selectSalmonBtn"
                               class="select-btn"
                             >
                               اختر هذه الوجبة
                             </button>
                           </div>
 
-                          <div class="note" id="premiumNote">
+                          <div class="note" id="salmonPremiumNote">
                             Salmon is a premium meal and it will cost extra for
                             selected days.
                           </div>
 
-                          <div class="extra-cost" id="extraCost">
+                          <div class="extra-cost" id="salmonExtraCost">
                             Extra Cost: SAR 0
                           </div>
                         </div>
@@ -4070,19 +4070,27 @@
     });
   });
 
-  const selectBtn = document.getElementById("selectMealBtn");
-  const checkbox = document.createElement("input"); // hidden checkbox
-  checkbox.type = "checkbox";
-  checkbox.id = "premium-meal-checkbox";
-  document.body.appendChild(checkbox); // for triggering JS
+  const selectSalmonBtn = document.getElementById("selectSalmonBtn");
+  const selectShrimpBtn = document.getElementById("selectShrimpBtn");
+  const salmonCheckbox = document.createElement("input"); // hidden checkbox
+  salmonCheckbox.type = "checkbox";
+  salmonCheckbox.id = "premium-salmon-checkbox";
+  document.body.appendChild(salmonCheckbox); // for triggering JS
+
+  const shrimpCheckbox = document.createElement("input"); // hidden checkbox
+  shrimpCheckbox.type = "checkbox";
+  shrimpCheckbox.id = "premium-shrimp-checkbox";
+  document.body.appendChild(shrimpCheckbox); // for triggering JS
 
   const calendarModal = document.getElementById("calendarModal");
   const closeModal = document.getElementById("closeModal");
   const calendarContainer = document.getElementById("calendarContainer");
   const calendar = document.getElementById("calendar");
   const weekHeader = document.getElementById("weekHeader");
-  const extraCost = document.getElementById("extraCost");
-  const note = document.getElementById("premiumNote");
+  const salmonExtraCost = document.getElementById("salmonExtraCost");
+  const shrimpExtraCost = document.getElementById("shrimpExtraCost");
+  const salmonPremiumNote = document.getElementById("salmonPremiumNote");
+  const shrimpPremiumNote = document.getElementById("shrimpPremiumNote");
 
   const subscriptionDays = 26;
   const pricePerMeal = 30;
@@ -4091,32 +4099,64 @@
   const subscriptionStart = new Date();
   const weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-  // زر الاختيار
-  selectBtn.addEventListener("click", () => {
-    selectBtn.classList.toggle("selected");
-    if (selectBtn.classList.contains("selected")) {
-      selectBtn.textContent = "تم الاختيار";
-      checkbox.checked = true;
-      checkbox.dispatchEvent(new Event("change"));
+  let meal = "";
+
+  selectSalmonBtn.addEventListener("click", () => {
+    selectSalmonBtn.classList.toggle("selected");
+    meal = "salmon";
+    if (selectSalmonBtn.classList.contains("selected")) {
+      selectSalmonBtn.textContent = "تم الاختيار";
+      salmonCheckbox.checked = true;
+      salmonCheckbox.dispatchEvent(new Event("change"));
     } else {
-      selectBtn.textContent = "اختر هذه الوجبة";
-      checkbox.checked = false;
-      checkbox.dispatchEvent(new Event("change"));
+      selectSalmonBtn.textContent = "اختر هذه الوجبة";
+      salmonCheckbox.checked = false;
+      salmonCheckbox.dispatchEvent(new Event("change"));
+    }
+  });
+
+  selectShrimpBtn.addEventListener("click", () => {
+    selectShrimpBtn.classList.toggle("selected");
+    meal = "shrimp";
+    if (selectShrimpBtn.classList.contains("selected")) {
+      selectShrimpBtn.textContent = "تم الاختيار";
+      shrimpCheckbox.checked = true;
+      shrimpCheckbox.dispatchEvent(new Event("change"));
+    } else {
+      selectShrimpBtn.textContent = "اختر هذه الوجبة";
+      shrimpCheckbox.checked = false;
+      shrimpCheckbox.dispatchEvent(new Event("change"));
     }
   });
 
   // Toggle checkbox
-  checkbox.addEventListener("change", () => {
-    if (checkbox.checked) {
+  salmonCheckbox.addEventListener("change", () => {
+    if (salmonCheckbox.checked) {
       calendarModal.style.display = "block";
-      note.style.display = "block";
-      extraCost.style.display = "block";
+      salmonPremiumNote.style.display = "block";
+      salmonExtraCost.style.display = "block";
       renderWeekHeader();
       renderCalendar();
     } else {
       calendarModal.style.display = "none";
-      note.style.display = "none";
-      extraCost.style.display = "none";
+      salmonPremiumNote.style.display = "none";
+      salmonExtraCost.style.display = "none";
+      selectedDays = [];
+      updateExtraCost();
+    }
+  });
+
+  shrimpCheckbox.addEventListener("change", () => {
+    if (shrimpCheckbox.checked) {
+      calendarModal.style.display = "block";
+      shrimpPremiumNote.style.display = "block";
+      shrimpExtraCost.style.display = "block";
+      renderWeekHeader();
+      renderCalendar();
+    } else {
+      calendarModal.style.display = "none";
+      shrimpPremiumNote.style.display = "none";
+      shrimpExtraCost.style.display = "none";
       selectedDays = [];
       updateExtraCost();
     }
@@ -4189,6 +4229,10 @@
   // Update extra cost
   function updateExtraCost() {
     const cost = selectedDays.length * pricePerMeal;
-    extraCost.textContent = `Extra Cost: SAR ${cost}`;
+    if (meal === "salmon") {
+      salmonExtraCost.textContent = `Extra Cost: SAR ${cost}`;
+    } else if (meal === "shrimp") {
+      shrimpExtraCost.textContent = `Extra Cost: SAR ${cost}`;
+    }
   }
 </script>

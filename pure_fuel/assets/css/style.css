@@ -2420,7 +2420,7 @@ footer .delivery-partners img:hover {
 .modal {
   display: none; /* Hidden by default */
   position: fixed;
-  z-index: 1; /* Sit on top */
+  z-index: 11; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%;
