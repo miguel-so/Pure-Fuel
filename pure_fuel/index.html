@@ -282,6 +282,20 @@
             <li class="nav-item" role="presentation">
               <button
                 class="nav-link"
+                id="pills-sandwitch-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-sandwitch"
+                type="button"
+                role="tab"
+                aria-controls="pills-sandwitch"
+                aria-selected="false"
+              >
+                Sandwitch
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
                 id="pills-contact-tab"
                 data-bs-toggle="pill"
                 data-bs-target="#pills-contact"
@@ -661,9 +675,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">BBQ Chicken</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -695,9 +711,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Chicken Biryani</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -729,9 +747,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Mushroom Chicken</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -767,9 +787,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Beef</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -801,9 +823,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Chili Beef</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -839,9 +863,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Fuel Shrimp</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -873,9 +899,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Shrimp</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -907,9 +935,170 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Salmon</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
+                      </div>
+                      <div class="card-custom-details">
+                        <span
+                          ><img src="assets/images/cal.png" alt="" />255
+                          cal</span
                         >
+                        <span
+                          ><img src="assets/images/prot.png" alt="" />42g
+                          protein</span
+                        >
+                        <span
+                          ><img src="assets/images/carb.png" alt="" />6g
+                          carbs</span
+                        >
+                        <span
+                          ><img src="assets/images/fat.png" alt="" />8g
+                          fat</span
+                        >
+                      </div>
+                      <span class="weight">Per 150g</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a href="#" class="btn d-block mx-auto show-more">Show More</a>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="pills-sandwitch"
+              role="tabpanel"
+              aria-labelledby="pills-sandwitch-tab"
+              tabindex="0"
+            >
+              <div class="row featured-meal-row tab-row">
+                <h3>Cheese</h3>
+                <div class="col-md-4">
+                  <div class="card-custom">
+                    <div class="card-custom-head">
+                      <img src="assets/product/img-26.jpg" alt="" />
+                    </div>
+                    <div class="card-custom-body">
+                      <div class="card-custom-title">
+                        <h4 class="mb-0">Cheese Tomato</h4>
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
+                      </div>
+                      <div class="card-custom-details">
+                        <span
+                          ><img src="assets/images/cal.png" alt="" />255
+                          cal</span
+                        >
+                        <span
+                          ><img src="assets/images/prot.png" alt="" />42g
+                          protein</span
+                        >
+                        <span
+                          ><img src="assets/images/carb.png" alt="" />6g
+                          carbs</span
+                        >
+                        <span
+                          ><img src="assets/images/fat.png" alt="" />8g
+                          fat</span
+                        >
+                      </div>
+                      <span class="weight">Per 150g</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card-custom">
+                    <div class="card-custom-head">
+                      <img src="assets/product/img-27.jpg" alt="" />
+                    </div>
+                    <div class="card-custom-body">
+                      <div class="card-custom-title">
+                        <h4 class="mb-0">Cheese Sausage</h4>
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
+                      </div>
+                      <div class="card-custom-details">
+                        <span
+                          ><img src="assets/images/cal.png" alt="" />255
+                          cal</span
+                        >
+                        <span
+                          ><img src="assets/images/prot.png" alt="" />42g
+                          protein</span
+                        >
+                        <span
+                          ><img src="assets/images/carb.png" alt="" />6g
+                          carbs</span
+                        >
+                        <span
+                          ><img src="assets/images/fat.png" alt="" />8g
+                          fat</span
+                        >
+                      </div>
+                      <span class="weight">Per 150g</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card-custom">
+                    <div class="card-custom-head">
+                      <img src="assets/product/img-28.jpg" alt="" />
+                    </div>
+                    <div class="card-custom-body">
+                      <div class="card-custom-title">
+                        <h4 class="mb-0">Sandwitch1</h4>
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
+                      </div>
+                      <div class="card-custom-details">
+                        <span
+                          ><img src="assets/images/cal.png" alt="" />255
+                          cal</span
+                        >
+                        <span
+                          ><img src="assets/images/prot.png" alt="" />42g
+                          protein</span
+                        >
+                        <span
+                          ><img src="assets/images/carb.png" alt="" />6g
+                          carbs</span
+                        >
+                        <span
+                          ><img src="assets/images/fat.png" alt="" />8g
+                          fat</span
+                        >
+                      </div>
+                      <span class="weight">Per 150g</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row featured-meal-row tab-row">
+                <h3>Sausage</h3>
+                <div class="col-md-4">
+                  <div class="card-custom">
+                    <div class="card-custom-head">
+                      <img src="assets/product/img-28.jpg" alt="" />
+                    </div>
+                    <div class="card-custom-body">
+                      <div class="card-custom-title">
+                        <h4 class="mb-0">Sandwitch2</h4>
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -953,9 +1142,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">White Rice</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -987,9 +1178,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Bukhari Rice</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1021,9 +1214,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Saffron Rice</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1059,9 +1254,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Mushroom Pasta</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1093,9 +1290,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Pesto Pasta</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1127,9 +1326,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Pure Fuel Pasta</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1165,9 +1366,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Potato</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1199,9 +1402,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Mashed Potato</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1233,9 +1438,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Grilled Potato</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1278,9 +1485,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Coca Cola</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1312,9 +1521,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Pepsi</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1346,9 +1557,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">7up</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1380,9 +1593,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Coca Cola</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1414,9 +1629,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Pepsi</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1448,9 +1665,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">7up</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1482,9 +1701,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Pepsi</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1516,9 +1737,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Dew</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1550,9 +1773,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Coca Cola</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1584,9 +1809,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">7up</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1618,9 +1845,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Pepsi</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1652,9 +1881,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">7up</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1686,9 +1917,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Dew</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1720,9 +1953,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Pepsi</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span
@@ -1754,9 +1989,11 @@
                     <div class="card-custom-body">
                       <div class="card-custom-title">
                         <h4 class="mb-0">Dew</h4>
-                        <span class="badge"
-                          ><span class="price">SAR 50</span></span
-                        >
+                        <div class="price-options">
+                          <span class="price-pill">100g: &#x20C1;15</span>
+                          <span class="price-pill">150g: &#x20C1;20</span>
+                          <span class="price-pill">200g: &#x20C1;25</span>
+                        </div>
                       </div>
                       <div class="card-custom-details">
                         <span

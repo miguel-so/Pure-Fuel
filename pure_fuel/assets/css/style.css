@@ -419,7 +419,7 @@ footer .upper p {
 }
 
 .card-custom-title {
-  padding: 14px 100px 14px 24px;
+  padding: 14px 24px;
   position: relative;
   background-color: #f1f1f1;
 }
@@ -2261,5 +2261,43 @@ footer .delivery-partners img:hover {
   .calendar-day {
     font-size: 9px;
     padding: 2px;
+  }
+}
+
+.price-options {
+  display: flex;
+  flex-wrap: nowrap; /* prevent wrapping */
+  gap: 8px; /* space between pills */
+  margin-top: 6px;
+  margin-left: 0px; /* align with first character of meal */
+  overflow: hidden; /* prevent horizontal scroll */
+}
+
+/* Individual price pills */
+.price-pill {
+  flex: 0 0 auto; /* prevent shrinking */
+  background: #e6f4ea;
+  color: #2c7a00;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: default;
+  white-space: nowrap;
+  text-align: center;
+  transition: transform 0.15s, background 0.15s;
+}
+
+.price-pill:hover {
+  transform: translateY(-2px);
+  background: #d2efd4;
+}
+
+/* Mobile: keep in one line */
+@media (max-width: 480px) {
+  .price-options {
+    flex-wrap: nowrap;
+    gap: 6px;
   }
 }
