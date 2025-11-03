@@ -2301,3 +2301,8 @@ footer .delivery-partners img:hover {
     gap: 6px;
   }
 }
+
+.google-reviews {
+  background-color: #f7f7f7;
+  padding: 50px 0;
+}
