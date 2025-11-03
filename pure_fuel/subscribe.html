@@ -758,15 +758,6 @@
                   class="d-flex flex-column flex-lg-row justify-content-start justify-content-md-between align-items-start align-items-md-center text-start text-md-center"
                 >
                   <h4 class="mb-2 mb-md-0">Select your meal</h4>
-                  <!-- <div class="option mb-4 mb-md-0">
-                                 <label class="cl-checkbox">
-                                     <input checked="" type="checkbox" id="check23">
-                                     <span></span>
-                                 </label>
-                                 <label for="check23">
-                                     <p class="">Show Premium Meals</p>
-                                 </label>
-                             </div> -->
                 </div>
 
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -796,6 +787,34 @@
                       aria-selected="false"
                     >
                       Proteins
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="pills-sandwich-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#pills-sandwich"
+                      type="button"
+                      role="tab"
+                      aria-controls="pills-sandwich"
+                      aria-selected="false"
+                    >
+                      Sandwich
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="pills-contact-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#pills-contact"
+                      type="button"
+                      role="tab"
+                      aria-controls="pills-contact"
+                      aria-selected="false"
+                    >
+                      Salads
                     </button>
                   </li>
                 </ul>
@@ -1204,32 +1223,6 @@
                     aria-labelledby="pills-profile-tab"
                     tabindex="0"
                   >
-                    <!-- <span>Premium</span> -->
-                    <!-- <span class="weight">Per 150g</span>
-                                 <div class="meal-option mt-4">
-                                     <label>
-                                         <input type="checkbox">
-                                         
-                                     </label>
-
-                                     <div class="counter d-none">
-                                         <button  class="decrease">−</button>
-                                         <span id="count">1</span>
-                                         <button  class="increase">+</button>
-                                     </div>
-                                 </div>
-                                 <div class="meal-option mt-4">
-                                     <label>
-                                         <input type="checkbox">
-                                         
-                                     </label>
-
-                                     <div class="counter d-none">
-                                         <button  class="decrease">−</button>
-                                         <span id="count">1</span>
-                                         <button  class="increase">+</button>
-                                     </div>
-                                 </div> -->
                     <h3>Chicken</h3>
                     <div class="row featured-meal-row">
                       <div class="col-md-4">
@@ -1542,6 +1535,582 @@
                           <div class="card-custom-body">
                             <div class="card-custom-title">
                               <h4 class="mb-0">Salmon</h4>
+                            </div>
+                            <div class="card-custom-details">
+                              <span
+                                ><img src="assets/images/cal.png" alt="" />255
+                                cal</span
+                              >
+                              <span
+                                ><img src="assets/images/prot.png" alt="" />42g
+                                protein</span
+                              >
+                              <span
+                                ><img src="assets/images/carb.png" alt="" />6g
+                                carbs</span
+                              >
+                              <span
+                                ><img src="assets/images/fat.png" alt="" />8g
+                                fat</span
+                              >
+                            </div>
+                            <span class="weight">Per 150g</span>
+                            <div class="meal-option invisible">
+                              <label>
+                                <input type="checkbox" />
+                              </label>
+
+                              <div class="counter d-none">
+                                <button class="decrease">−</button>
+                                <span id="count">1</span>
+                                <button class="increase">+</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="pills-sandwich"
+                    role="tabpanel"
+                    aria-labelledby="pills-sandwich-tab"
+                    tabindex="0"
+                  >
+                    <h3>Cheese</h3>
+                    <div class="row featured-meal-row">
+                      <div class="col-md-4">
+                        <div class="card-custom">
+                          <div class="card-custom-head">
+                            <img src="assets/product/img-26.jpg" alt="" />
+                          </div>
+                          <div class="card-custom-body">
+                            <div class="card-custom-title">
+                              <h4 class="mb-0">Cheese Tomato</h4>
+                            </div>
+                            <div class="card-custom-details">
+                              <span
+                                ><img src="assets/images/cal.png" alt="" />255
+                                cal</span
+                              >
+                              <span
+                                ><img src="assets/images/prot.png" alt="" />42g
+                                protein</span
+                              >
+                              <span
+                                ><img src="assets/images/carb.png" alt="" />6g
+                                carbs</span
+                              >
+                              <span
+                                ><img src="assets/images/fat.png" alt="" />8g
+                                fat</span
+                              >
+                            </div>
+                            <span class="weight">Per 150g</span>
+                            <div class="meal-option invisible">
+                              <label>
+                                <input type="checkbox" />
+                              </label>
+
+                              <div class="counter d-none">
+                                <button class="decrease">−</button>
+                                <span id="count">1</span>
+                                <button class="increase">+</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="card-custom">
+                          <div class="card-custom-head">
+                            <img src="assets/product/img-27.jpg" alt="" />
+                          </div>
+                          <div class="card-custom-body">
+                            <div class="card-custom-title">
+                              <h4 class="mb-0">Cheese Sausage</h4>
+                            </div>
+                            <div class="card-custom-details">
+                              <span
+                                ><img src="assets/images/cal.png" alt="" />255
+                                cal</span
+                              >
+                              <span
+                                ><img src="assets/images/prot.png" alt="" />42g
+                                protein</span
+                              >
+                              <span
+                                ><img src="assets/images/carb.png" alt="" />6g
+                                carbs</span
+                              >
+                              <span
+                                ><img src="assets/images/fat.png" alt="" />8g
+                                fat</span
+                              >
+                            </div>
+                            <span class="weight">Per 150g</span>
+                            <div class="meal-option invisible">
+                              <label>
+                                <input type="checkbox" />
+                              </label>
+
+                              <div class="counter d-none">
+                                <button class="decrease">−</button>
+                                <span id="count">1</span>
+                                <button class="increase">+</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="card-custom">
+                          <div class="card-custom-head">
+                            <img src="assets/product/img-28.jpg" alt="" />
+                          </div>
+                          <div class="card-custom-body">
+                            <div class="card-custom-title">
+                              <h4 class="mb-0">Sandwich1</h4>
+                            </div>
+                            <div class="card-custom-details">
+                              <span
+                                ><img src="assets/images/cal.png" alt="" />255
+                                cal</span
+                              >
+                              <span
+                                ><img src="assets/images/prot.png" alt="" />42g
+                                protein</span
+                              >
+                              <span
+                                ><img src="assets/images/carb.png" alt="" />6g
+                                carbs</span
+                              >
+                              <span
+                                ><img src="assets/images/fat.png" alt="" />8g
+                                fat</span
+                              >
+                            </div>
+                            <span class="weight">Per 150g</span>
+                            <div class="meal-option invisible">
+                              <label>
+                                <input type="checkbox" />
+                              </label>
+
+                              <div class="counter d-none">
+                                <button class="decrease">−</button>
+                                <span id="count">1</span>
+                                <button class="increase">+</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="card-custom">
+                          <div class="card-custom-head">
+                            <img src="assets/product/img-28.jpg" alt="" />
+                          </div>
+                          <div class="card-custom-body">
+                            <div class="card-custom-title">
+                              <h4 class="mb-0">Sandwich2</h4>
+                            </div>
+                            <div class="card-custom-details">
+                              <span
+                                ><img src="assets/images/cal.png" alt="" />255
+                                cal</span
+                              >
+                              <span
+                                ><img src="assets/images/prot.png" alt="" />42g
+                                protein</span
+                              >
+                              <span
+                                ><img src="assets/images/carb.png" alt="" />6g
+                                carbs</span
+                              >
+                              <span
+                                ><img src="assets/images/fat.png" alt="" />8g
+                                fat</span
+                              >
+                            </div>
+                            <span class="weight">Per 150g</span>
+                            <div class="meal-option invisible">
+                              <label>
+                                <input type="checkbox" />
+                              </label>
+
+                              <div class="counter d-none">
+                                <button class="decrease">−</button>
+                                <span id="count">1</span>
+                                <button class="increase">+</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="pills-contact"
+                    role="tabpanel"
+                    aria-labelledby="pills-contact-tab"
+                    tabindex="0"
+                  >
+                    <h3>Salads</h3>
+                    <div class="row featured-meal-row">
+                      <div class="col-md-4">
+                        <div class="card-custom">
+                          <div class="card-custom-head">
+                            <img src="assets/product/img-9.jpg" alt="" />
+                          </div>
+                          <div class="card-custom-body">
+                            <div class="card-custom-title">
+                              <h4 class="mb-0">White Rice</h4>
+                            </div>
+                            <div class="card-custom-details">
+                              <span
+                                ><img src="assets/images/cal.png" alt="" />255
+                                cal</span
+                              >
+                              <span
+                                ><img src="assets/images/prot.png" alt="" />42g
+                                protein</span
+                              >
+                              <span
+                                ><img src="assets/images/carb.png" alt="" />6g
+                                carbs</span
+                              >
+                              <span
+                                ><img src="assets/images/fat.png" alt="" />8g
+                                fat</span
+                              >
+                            </div>
+                            <span class="weight">Per 150g</span>
+                            <div class="meal-option invisible">
+                              <label>
+                                <input type="checkbox" />
+                              </label>
+
+                              <div class="counter d-none">
+                                <button class="decrease">−</button>
+                                <span id="count">1</span>
+                                <button class="increase">+</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="card-custom">
+                          <div class="card-custom-head">
+                            <img src="assets/product/img-10.jpg" alt="" />
+                          </div>
+                          <div class="card-custom-body">
+                            <div class="card-custom-title">
+                              <h4 class="mb-0">Bukhari Rice</h4>
+                            </div>
+                            <div class="card-custom-details">
+                              <span
+                                ><img src="assets/images/cal.png" alt="" />255
+                                cal</span
+                              >
+                              <span
+                                ><img src="assets/images/prot.png" alt="" />42g
+                                protein</span
+                              >
+                              <span
+                                ><img src="assets/images/carb.png" alt="" />6g
+                                carbs</span
+                              >
+                              <span
+                                ><img src="assets/images/fat.png" alt="" />8g
+                                fat</span
+                              >
+                            </div>
+                            <span class="weight">Per 150g</span>
+                            <div class="meal-option invisible">
+                              <label>
+                                <input type="checkbox" />
+                              </label>
+
+                              <div class="counter d-none">
+                                <button class="decrease">−</button>
+                                <span id="count">1</span>
+                                <button class="increase">+</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="card-custom">
+                          <div class="card-custom-head">
+                            <img src="assets/product/img-11.jpg" alt="" />
+                          </div>
+                          <div class="card-custom-body">
+                            <div class="card-custom-title">
+                              <h4 class="mb-0">Saffron Rice</h4>
+                            </div>
+                            <div class="card-custom-details">
+                              <span
+                                ><img src="assets/images/cal.png" alt="" />255
+                                cal</span
+                              >
+                              <span
+                                ><img src="assets/images/prot.png" alt="" />42g
+                                protein</span
+                              >
+                              <span
+                                ><img src="assets/images/carb.png" alt="" />6g
+                                carbs</span
+                              >
+                              <span
+                                ><img src="assets/images/fat.png" alt="" />8g
+                                fat</span
+                              >
+                            </div>
+                            <span class="weight">Per 150g</span>
+                            <div class="meal-option invisible">
+                              <label>
+                                <input type="checkbox" />
+                              </label>
+
+                              <div class="counter d-none">
+                                <button class="decrease">−</button>
+                                <span id="count">1</span>
+                                <button class="increase">+</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <h3>Sweets</h3>
+                    <div class="row featured-meal-row">
+                      <div class="col-md-4">
+                        <div class="card-custom">
+                          <div class="card-custom-head">
+                            <img src="assets/product/img-12.jpg" alt="" />
+                          </div>
+                          <div class="card-custom-body">
+                            <div class="card-custom-title">
+                              <h4 class="mb-0">Mushroom Pasta</h4>
+                            </div>
+                            <div class="card-custom-details">
+                              <span
+                                ><img src="assets/images/cal.png" alt="" />255
+                                cal</span
+                              >
+                              <span
+                                ><img src="assets/images/prot.png" alt="" />42g
+                                protein</span
+                              >
+                              <span
+                                ><img src="assets/images/carb.png" alt="" />6g
+                                carbs</span
+                              >
+                              <span
+                                ><img src="assets/images/fat.png" alt="" />8g
+                                fat</span
+                              >
+                            </div>
+                            <span class="weight">Per 150g</span>
+                            <div class="meal-option invisible">
+                              <label>
+                                <input type="checkbox" />
+                              </label>
+
+                              <div class="counter d-none">
+                                <button class="decrease">−</button>
+                                <span id="count">1</span>
+                                <button class="increase">+</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="card-custom">
+                          <div class="card-custom-head">
+                            <img src="assets/product/img-13.jpg" alt="" />
+                          </div>
+                          <div class="card-custom-body">
+                            <div class="card-custom-title">
+                              <h4 class="mb-0">Pesto Pasta</h4>
+                            </div>
+                            <div class="card-custom-details">
+                              <span
+                                ><img src="assets/images/cal.png" alt="" />255
+                                cal</span
+                              >
+                              <span
+                                ><img src="assets/images/prot.png" alt="" />42g
+                                protein</span
+                              >
+                              <span
+                                ><img src="assets/images/carb.png" alt="" />6g
+                                carbs</span
+                              >
+                              <span
+                                ><img src="assets/images/fat.png" alt="" />8g
+                                fat</span
+                              >
+                            </div>
+                            <span class="weight">Per 150g</span>
+                            <div class="meal-option invisible">
+                              <label>
+                                <input type="checkbox" />
+                              </label>
+
+                              <div class="counter d-none">
+                                <button class="decrease">−</button>
+                                <span id="count">1</span>
+                                <button class="increase">+</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="card-custom">
+                          <div class="card-custom-head">
+                            <img src="assets/product/img-14.jpg" alt="" />
+                          </div>
+                          <div class="card-custom-body">
+                            <div class="card-custom-title">
+                              <h4 class="mb-0">Pure Fuel Pasta</h4>
+                            </div>
+                            <div class="card-custom-details">
+                              <span
+                                ><img src="assets/images/cal.png" alt="" />255
+                                cal</span
+                              >
+                              <span
+                                ><img src="assets/images/prot.png" alt="" />42g
+                                protein</span
+                              >
+                              <span
+                                ><img src="assets/images/carb.png" alt="" />6g
+                                carbs</span
+                              >
+                              <span
+                                ><img src="assets/images/fat.png" alt="" />8g
+                                fat</span
+                              >
+                            </div>
+                            <span class="weight">Per 150g</span>
+                            <div class="meal-option invisible">
+                              <label>
+                                <input type="checkbox" />
+                              </label>
+
+                              <div class="counter d-none">
+                                <button class="decrease">−</button>
+                                <span id="count">1</span>
+                                <button class="increase">+</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <h3>Snacks</h3>
+                    <div class="row featured-meal-row">
+                      <div class="col-md-4">
+                        <div class="card-custom">
+                          <div class="card-custom-head">
+                            <img src="assets/product/img-15.jpg" alt="" />
+                          </div>
+                          <div class="card-custom-body">
+                            <div class="card-custom-title">
+                              <h4 class="mb-0">Potato</h4>
+                            </div>
+                            <div class="card-custom-details">
+                              <span
+                                ><img src="assets/images/cal.png" alt="" />255
+                                cal</span
+                              >
+                              <span
+                                ><img src="assets/images/prot.png" alt="" />42g
+                                protein</span
+                              >
+                              <span
+                                ><img src="assets/images/carb.png" alt="" />6g
+                                carbs</span
+                              >
+                              <span
+                                ><img src="assets/images/fat.png" alt="" />8g
+                                fat</span
+                              >
+                            </div>
+                            <span class="weight">Per 150g</span>
+                            <div class="meal-option invisible">
+                              <label>
+                                <input type="checkbox" />
+                              </label>
+
+                              <div class="counter d-none">
+                                <button class="decrease">−</button>
+                                <span id="count">1</span>
+                                <button class="increase">+</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="card-custom">
+                          <div class="card-custom-head">
+                            <img src="assets/product/img-16.jpg" alt="" />
+                          </div>
+                          <div class="card-custom-body">
+                            <div class="card-custom-title">
+                              <h4 class="mb-0">Mashed Potato</h4>
+                            </div>
+                            <div class="card-custom-details">
+                              <span
+                                ><img src="assets/images/cal.png" alt="" />255
+                                cal</span
+                              >
+                              <span
+                                ><img src="assets/images/prot.png" alt="" />42g
+                                protein</span
+                              >
+                              <span
+                                ><img src="assets/images/carb.png" alt="" />6g
+                                carbs</span
+                              >
+                              <span
+                                ><img src="assets/images/fat.png" alt="" />8g
+                                fat</span
+                              >
+                            </div>
+                            <span class="weight">Per 150g</span>
+                            <div class="meal-option invisible">
+                              <label>
+                                <input type="checkbox" />
+                              </label>
+
+                              <div class="counter d-none">
+                                <button class="decrease">−</button>
+                                <span id="count">1</span>
+                                <button class="increase">+</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="card-custom">
+                          <div class="card-custom-head">
+                            <img src="assets/product/img-17.jpg" alt="" />
+                          </div>
+                          <div class="card-custom-body">
+                            <div class="card-custom-title">
+                              <h4 class="mb-0">Grilled Potato</h4>
                             </div>
                             <div class="card-custom-details">
                               <span
