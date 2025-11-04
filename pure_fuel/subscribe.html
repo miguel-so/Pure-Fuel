@@ -1527,10 +1527,7 @@
                             <div>Additional Cost</div>
                           </div>
 
-                          <img
-                            src="https://www.webwiders.com/pure_fuel/assets/images/fish-3.png"
-                            alt="Salmon"
-                          />
+                          <img src="assets/images/fish-3.png" alt="Salmon" />
 
                           <div class="meal-title">Salmon</div>
                           <div class="meal-details">
@@ -1835,44 +1832,37 @@
                         </div>
                       </div>
                       <div class="col-md-4">
-                        <div class="card-custom">
-                          <div class="card-custom-head">
-                            <img src="assets/product/img-11.jpg" alt="" />
+                        <div class="premium-card">
+                          <div class="premium-badge">
+                            <div>Premium</div>
+                            <div>Additional Cost</div>
                           </div>
-                          <div class="card-custom-body">
-                            <div class="card-custom-title">
-                              <h4 class="mb-0">Saffron Rice</h4>
-                            </div>
-                            <div class="card-custom-details">
-                              <span
-                                ><img src="assets/images/cal.png" alt="" />255
-                                cal</span
-                              >
-                              <span
-                                ><img src="assets/images/prot.png" alt="" />42g
-                                protein</span
-                              >
-                              <span
-                                ><img src="assets/images/carb.png" alt="" />6g
-                                carbs</span
-                              >
-                              <span
-                                ><img src="assets/images/fat.png" alt="" />8g
-                                fat</span
-                              >
-                            </div>
-                            <span class="weight">Per 150g</span>
-                            <div class="meal-option invisible">
-                              <label>
-                                <input type="checkbox" />
-                              </label>
+                          <img src="assets/product/img-11.jpg" alt="" />
+                          <div class="meal-title">Saffron Rice</div>
+                          <div class="meal-details">
+                            <span>255 cal</span>
+                            <span>42g protein</span>
+                            <span>6g carbs</span>
+                            <span>8g fat</span>
+                          </div>
 
-                              <div class="counter d-none">
-                                <button class="decrease">−</button>
-                                <span id="count">1</span>
-                                <button class="increase">+</button>
-                              </div>
-                            </div>
+                          <div class="meal-option">
+                            <button
+                              type="button"
+                              id="selectSaladBtn"
+                              class="select-btn"
+                            >
+                              اختر هذه الوجبة
+                            </button>
+                          </div>
+
+                          <div class="note" id="saladPremiumNote">
+                            Saffron is a premium meal and it will cost extra for
+                            selected days.
+                          </div>
+
+                          <div class="extra-cost" id="saladExtraCost">
+                            Extra Cost: SAR 0
                           </div>
                         </div>
                       </div>
@@ -2011,44 +2001,37 @@
                     <h3>Snacks</h3>
                     <div class="row featured-meal-row">
                       <div class="col-md-4">
-                        <div class="card-custom">
-                          <div class="card-custom-head">
-                            <img src="assets/product/img-15.jpg" alt="" />
+                        <div class="premium-card">
+                          <div class="premium-badge">
+                            <div>Premium</div>
+                            <div>Additional Cost</div>
                           </div>
-                          <div class="card-custom-body">
-                            <div class="card-custom-title">
-                              <h4 class="mb-0">Potato</h4>
-                            </div>
-                            <div class="card-custom-details">
-                              <span
-                                ><img src="assets/images/cal.png" alt="" />255
-                                cal</span
-                              >
-                              <span
-                                ><img src="assets/images/prot.png" alt="" />42g
-                                protein</span
-                              >
-                              <span
-                                ><img src="assets/images/carb.png" alt="" />6g
-                                carbs</span
-                              >
-                              <span
-                                ><img src="assets/images/fat.png" alt="" />8g
-                                fat</span
-                              >
-                            </div>
-                            <span class="weight">Per 150g</span>
-                            <div class="meal-option invisible">
-                              <label>
-                                <input type="checkbox" />
-                              </label>
+                          <img src="assets/product/img-15.jpg" alt="" />
+                          <div class="meal-title">Potato</div>
+                          <div class="meal-details">
+                            <span>255 cal</span>
+                            <span>42g protein</span>
+                            <span>6g carbs</span>
+                            <span>8g fat</span>
+                          </div>
 
-                              <div class="counter d-none">
-                                <button class="decrease">−</button>
-                                <span id="count">1</span>
-                                <button class="increase">+</button>
-                              </div>
-                            </div>
+                          <div class="meal-option">
+                            <button
+                              type="button"
+                              id="selectSnackBtn"
+                              class="select-btn"
+                            >
+                              اختر هذه الوجبة
+                            </button>
+                          </div>
+
+                          <div class="note" id="snackPremiumNote">
+                            Potato is a premium meal and it will cost extra for
+                            selected days.
+                          </div>
+
+                          <div class="extra-cost" id="snackExtraCost">
+                            Extra Cost: SAR 0
                           </div>
                         </div>
                       </div>
@@ -4072,15 +4055,28 @@
 
   const selectSalmonBtn = document.getElementById("selectSalmonBtn");
   const selectShrimpBtn = document.getElementById("selectShrimpBtn");
-  const salmonCheckbox = document.createElement("input"); // hidden checkbox
+  const selectSnackBtn = document.getElementById("selectSnackBtn");
+  const selectSaladBtn = document.getElementById("selectSaladBtn");
+
+  const salmonCheckbox = document.createElement("input");
   salmonCheckbox.type = "checkbox";
   salmonCheckbox.id = "premium-salmon-checkbox";
-  document.body.appendChild(salmonCheckbox); // for triggering JS
+  document.body.appendChild(salmonCheckbox);
 
-  const shrimpCheckbox = document.createElement("input"); // hidden checkbox
+  const shrimpCheckbox = document.createElement("input");
   shrimpCheckbox.type = "checkbox";
   shrimpCheckbox.id = "premium-shrimp-checkbox";
-  document.body.appendChild(shrimpCheckbox); // for triggering JS
+  document.body.appendChild(shrimpCheckbox);
+
+  const snackCheckbox = document.createElement("input");
+  snackCheckbox.type = "checkbox";
+  snackCheckbox.id = "premium-snack-checkbox";
+  document.body.appendChild(snackCheckbox);
+
+  const saladCheckbox = document.createElement("input");
+  saladCheckbox.type = "checkbox";
+  saladCheckbox.id = "premium-salad-checkbox";
+  document.body.appendChild(saladCheckbox);
 
   const calendarModal = document.getElementById("calendarModal");
   const closeModal = document.getElementById("closeModal");
@@ -4089,8 +4085,12 @@
   const weekHeader = document.getElementById("weekHeader");
   const salmonExtraCost = document.getElementById("salmonExtraCost");
   const shrimpExtraCost = document.getElementById("shrimpExtraCost");
+  const snackExtraCost = document.getElementById("snackExtraCost");
+  const saladExtraCost = document.getElementById("saladExtraCost");
   const salmonPremiumNote = document.getElementById("salmonPremiumNote");
   const shrimpPremiumNote = document.getElementById("shrimpPremiumNote");
+  const snackPremiumNote = document.getElementById("snackPremiumNote");
+  const saladPremiumNote = document.getElementById("saladPremiumNote");
 
   const subscriptionDays = 26;
   const pricePerMeal = 30;
@@ -4129,7 +4129,34 @@
     }
   });
 
-  // Toggle checkbox
+  selectSnackBtn.addEventListener("click", () => {
+    selectSnackBtn.classList.toggle("selected");
+    meal = "snack";
+    if (selectSnackBtn.classList.contains("selected")) {
+      selectSnackBtn.textContent = "تم الاختيار";
+      snackCheckbox.checked = true;
+      snackCheckbox.dispatchEvent(new Event("change"));
+    } else {
+      selectSnackBtn.textContent = "اختر هذه الوجبة";
+      snackCheckbox.checked = false;
+      snackCheckbox.dispatchEvent(new Event("change"));
+    }
+  });
+
+  selectSaladBtn.addEventListener("click", () => {
+    selectSaladBtn.classList.toggle("selected");
+    meal = "salad";
+    if (selectSaladBtn.classList.contains("selected")) {
+      selectSaladBtn.textContent = "تم الاختيار";
+      saladCheckbox.checked = true;
+      saladCheckbox.dispatchEvent(new Event("change"));
+    } else {
+      selectSaladBtn.textContent = "اختر هذه الوجبة";
+      saladCheckbox.checked = false;
+      saladCheckbox.dispatchEvent(new Event("change"));
+    }
+  });
+
   salmonCheckbox.addEventListener("change", () => {
     if (salmonCheckbox.checked) {
       calendarModal.style.display = "block";
@@ -4157,6 +4184,38 @@
       calendarModal.style.display = "none";
       shrimpPremiumNote.style.display = "none";
       shrimpExtraCost.style.display = "none";
+      selectedDays = [];
+      updateExtraCost();
+    }
+  });
+
+  snackCheckbox.addEventListener("change", () => {
+    if (snackCheckbox.checked) {
+      calendarModal.style.display = "block";
+      snackPremiumNote.style.display = "block";
+      snackExtraCost.style.display = "block";
+      renderWeekHeader();
+      renderCalendar();
+    } else {
+      calendarModal.style.display = "none";
+      snackPremiumNote.style.display = "none";
+      snackExtraCost.style.display = "none";
+      selectedDays = [];
+      updateExtraCost();
+    }
+  });
+
+  saladCheckbox.addEventListener("change", () => {
+    if (saladCheckbox.checked) {
+      calendarModal.style.display = "block";
+      saladPremiumNote.style.display = "block";
+      saladExtraCost.style.display = "block";
+      renderWeekHeader();
+      renderCalendar();
+    } else {
+      calendarModal.style.display = "none";
+      saladPremiumNote.style.display = "none";
+      saladExtraCost.style.display = "none";
       selectedDays = [];
       updateExtraCost();
     }
@@ -4233,6 +4292,10 @@
       salmonExtraCost.textContent = `Extra Cost: SAR ${cost}`;
     } else if (meal === "shrimp") {
       shrimpExtraCost.textContent = `Extra Cost: SAR ${cost}`;
+    } else if (meal === "snack") {
+      snackExtraCost.textContent = `Extra Cost: SAR ${cost}`;
+    } else if (meal === "salad") {
+      saladExtraCost.textContent = `Extra Cost: SAR ${cost}`;
     }
   }
 </script>
